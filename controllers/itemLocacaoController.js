@@ -10,7 +10,7 @@ const getItemLocacao = async (request, response) => {
 }
 
 const addItemLocacao = async (request, response) => {
-    await addLocacaoDB(request.body)
+    await addItemLocacaoDB(request.body)
         .then(data => response.status(200).json({
             status: "success",
             message: "Item da Locação criado",
@@ -48,7 +48,7 @@ const deleteItemLocacao = async (request, response) => {
 }
 
 const getItemLocacaoPorId = async (request, response) => {
-    await getLocacaoPorIdDB(request.params.id)
+    await getItemLocacaoPorIdDB(request.params.id)
         .then(data => response.status(200).json(data))
         .catch(err => response.status(400).json({
             status: "error",
